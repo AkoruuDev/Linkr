@@ -1,9 +1,40 @@
 import styled from "styled-components";
-import { Link} from "react-router-dom";
-//import { useState } from "react";
-//import axios from "axios"
+import { Link, useNavigate} from "react-router-dom";
+import { useState } from "react";
+import axios from "axios"
 
 export default function SignUp() {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [name, setName] = useState("");
+    const [url, setUrl] = useState("");
+    const [carregando, setCarregando] = useState(false);
+    const navigate = useNavigate();
+
+    function userData(e) {
+        e.preventDefault();
+        setCarregando(true)
+        const promise = axios.post(
+            "",
+            {
+                email: email,
+                name: name,
+                password: password,
+                url: url
+            }
+        );
+
+        promise.then(() =>
+            navigate("/", {
+            })
+        );
+
+        promise.catch((error) => {
+            alert(error.response.data.message)
+            setCarregando(false)
+        })
+    }
+
     return (
         <Container>
             <Title>
@@ -14,29 +45,29 @@ export default function SignUp() {
                 </div>
             </Title>
             <SignUpInputs>
-                <form onSubmit="{dadosUsuarioCadastro}">
+                <form onSubmit={userData}>
                     <input
                         type={'email'}
                         placeholder={"e-mail"}
-                    //onChange={(e) => setNome(e.target.value)} disabled={carregando}
+                        onChange={(e) => setEmail(e.target.value)} disabled={carregando}
                     ></input>
                     <input
                         type={'password'}
                         placeholder={"password"}
-                    //onChange={(e) => setEmail(e.target.value)} disabled={carregando}
+                        onChange={(e) => setPassword(e.target.value)} disabled={carregando}
                     ></input>
                     <input
                         type={'text'}
                         placeholder={"username"}
-                    //onChange={(e) => setSenha(e.target.value)} disabled={carregando}
+                        onChange={(e) => setName(e.target.value)} disabled={carregando}
                     ></input>
                     <input
                         type={'url'}
                         placeholder={"picture url"}
-                    //onChange={(e) => setSenhaConfirmada(e.target.value)} disabled={carregando}
+                        onChange={(e) => setUrl(e.target.value)} disabled={carregando}
                     ></input>
                     <button >Sign Up</button>
-                    {/* <Link to="/signup"><p>Switch back to log in</p></Link>  */}
+                    <Link to="/signup"><p>Switch back to log in</p></Link> 
                 </form>
             </SignUpInputs>
         </Container>
