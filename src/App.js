@@ -1,5 +1,5 @@
 //import logo from './logo.svg';
-//import SignUp from "./SignUp";
+// import SignUp from "./pages/log/SignUp";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export default function App() {
