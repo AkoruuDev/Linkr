@@ -2,8 +2,10 @@
 // import SignUp from "./pages/log/SignUp";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import GlobalStyle from "./styles/globalStyles";
+import MyProfile from "./pages/contents/MyProfile";
+import Profile from "./pages/contents/Profile";
 
-export default function App() {
+export default function App () {
   return (
     <>
       < GlobalStyle />
@@ -11,7 +13,9 @@ export default function App() {
         <Routes>
           {/* <Route path="/" element={<SignIn />} />
           <Route path="/cadastre" element={<SignUp />} /> */}
-        </Routes>
+          <Route path='/user/:id' element={< Profile />} />
+          <Route path='/user/me' element={< MyProfile />} />
+      </Routes>
       </BrowserRouter>
     </>
   )
