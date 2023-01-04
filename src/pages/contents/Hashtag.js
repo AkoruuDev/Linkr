@@ -21,6 +21,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
+  background-color: #333333;
 `;
 
 const Wrapper = styled.div`
@@ -31,7 +32,7 @@ const Wrapper = styled.div`
   margin-bottom: 100px;
   width: min(100vw, 614px);
   h1 {
-    color: #ffffff;
+    color: #FFFFFF;
     margin-left: 17px;
     margin-bottom: 19px;
   }
