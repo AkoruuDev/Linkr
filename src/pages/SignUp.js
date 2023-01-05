@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link, useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios"
 
@@ -67,7 +67,7 @@ export default function SignUp() {
                         onChange={(e) => setUrl(e.target.value)} disabled={carregando}
                     ></input>
                     <button >Sign Up</button>
-                    <Link to="/signup"><p>Switch back to log in</p></Link> 
+                    <Link to="/"><p>Switch back to log in</p></Link>
                 </form>
             </SignUpInputs>
         </Container>
