@@ -8,12 +8,12 @@ export default function SignUp() {
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
     const [url, setUrl] = useState("");
-    const [carregando, setCarregando] = useState(false);
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
     function userData(e) {
         e.preventDefault();
-        setCarregando(true)
+        setLoading(true)
         const promise = axios.post(
             "",
             {
@@ -31,7 +31,7 @@ export default function SignUp() {
 
         promise.catch((error) => {
             alert(error.response.data.message)
-            setCarregando(false)
+            setLoading(false)
         })
     }
 
@@ -49,22 +49,22 @@ export default function SignUp() {
                     <input
                         type={'email'}
                         placeholder={"e-mail"}
-                        onChange={(e) => setEmail(e.target.value)} disabled={carregando}
+                        onChange={(e) => setEmail(e.target.value)} disabled={loading}
                     ></input>
                     <input
                         type={'password'}
                         placeholder={"password"}
-                        onChange={(e) => setPassword(e.target.value)} disabled={carregando}
+                        onChange={(e) => setPassword(e.target.value)} disabled={loading}
                     ></input>
                     <input
                         type={'text'}
                         placeholder={"username"}
-                        onChange={(e) => setName(e.target.value)} disabled={carregando}
+                        onChange={(e) => setName(e.target.value)} disabled={loading}
                     ></input>
                     <input
                         type={'url'}
                         placeholder={"picture url"}
-                        onChange={(e) => setUrl(e.target.value)} disabled={carregando}
+                        onChange={(e) => setUrl(e.target.value)} disabled={loading}
                     ></input>
                     <button >Sign Up</button>
                     <Link to="/"><p>Switch back to log in</p></Link>
