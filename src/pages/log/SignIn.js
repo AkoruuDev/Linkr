@@ -9,19 +9,18 @@ const SignIn = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [desabilitar, setDesabilitar] = useState(false);
-    
+    const [desabilitar, setDesabilitar] = useState(false);    
+   
     function signIn(e) {
         setDesabilitar(true);
         e.preventDefault();
         const promise = axios.post("http://localhost:5000/signin", {email: email, password: password});
-        promise.then((res) => {navigate("/timeline"); console.log(res);});
+        promise.then((res) => { localStorage.setItem("token", res.data.token); console.log(res); navigate("/timeline")});
         promise.catch((err) => {
             if(err.response.status === 409){ alert("Usuário logado.")};
             if(err.response.status === 401){ alert("Usuário não cadastrado.")};
             setDesabilitar(false)
         });
-         
     }
 
   return (
