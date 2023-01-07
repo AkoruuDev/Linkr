@@ -37,7 +37,7 @@ const SignIn = () => {
                 <Email type="email" placeholder='e-mail' value={email} onChange={e => setEmail(e.target.value)} required disabled={desabilitar}></Email>
                 <Password type="password" placeholder="password" value={password} onChange={e => setPassword(e.target.value)} required disabled={desabilitar}></Password> 
                 <LogIn type='submit' disabled={desabilitar}>Log In</LogIn> 
-                <SignUp onClick={()=> navigate("/signUp")} disabled={desabilitar}>First time? Create an account!</SignUp>          
+                <SignUp onClick={()=> navigate("/cadastre")} disabled={desabilitar}>First time? Create an account!</SignUp>          
             </form>
         </GreyContainer>
     </MainContainer>
