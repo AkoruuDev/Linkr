@@ -24,12 +24,8 @@ const Header = () => {
         const promise = axios.delete("http://localhost:5000/signout", {headers: { "Authorization": `Bearer ${token}`}, });
         promise.then((res) => {alert("Logout efetuado com sucesso!"); navigate("/");});
         promise.catch((err) => {console.log(err); alert("Algo deu errado!")});
-        
-        
-
     }
-
-
+    
     return (
         <>
         <MainHeader>
