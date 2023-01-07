@@ -17,13 +17,13 @@ export default function App () {
         <Routes>
           {/* <Route path="/" element={<SignIn />} />
           <Route path="/cadastre" element={<SignUp />} /> */}
-        <Route path="/" element={<SignUp />} />
+          <Route path="/" element={<SignUp />} />
 
           <Route path='/user/:id' element={< Profile />} />
           <Route path='/user/me' element={< MyProfile />} />
           <Route path='/hashtag/:hashtag' element={<Hashtag />} />
-      </Routes>
-      </BrowserRouter>
+        </Routes>
+    </BrowserRouter>
     </>
   )
 }
