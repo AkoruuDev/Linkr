@@ -1,8 +1,10 @@
 import styled from "styled-components"
 import profile from "../../assets/profile.jpg";
 
+
 export default function Profile () {
     return (
+        
         <Container>
             <Main>
                 <Info>
@@ -13,7 +15,7 @@ export default function Profile () {
                     </InfoBox>
                 </Info>
                 <Posts>
-                    <div><span>✨</span> {'0'} Posts</div>
+                signup       <div><span>✨</span> {'0'} Posts</div>
                     <div><span>✨</span> {'0'} Likes</div>
                 </Posts>
                 <Support>
@@ -23,6 +25,7 @@ export default function Profile () {
                 <Edit>Edit acount</Edit>
             </Main>
         </Container>
+       
     )
 }
 
