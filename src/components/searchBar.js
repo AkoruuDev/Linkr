@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import styled from "styled-components"
 import { searchProfile, searchProfileList } from "../database/database.js";
 import { UserList } from "./UserList.js";
+import { BsSearch } from "react-icons/ai";
 
 export function searchBar(search) {
     const [countChar, setCountChar] = useState(0);
@@ -23,7 +24,7 @@ export function searchBar(search) {
     return (
         <Container>
             <SearchBar type='search' placeholder='Search by user' autocomplete='on' onChange={() => setCountChar(countChar + 1)} />
-            {/* Search Icon */}
+            <BsSearch />
             <ListBox>{list.map(user => {
                 <UserList key={user.id} user={user} />
             })}</ListBox>
