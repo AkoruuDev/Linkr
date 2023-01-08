@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react"
-import styled from "styled-components"
-import { searchProfile, searchProfileList } from "../database/database.js";
+import { useEffect, useState } from "react";
+import styled from "styled-components";
+import {searchProfileList } from "../database/database.js";
 import { UserList } from "./UserList.js";
 
-export function searchBar(search) {
+export function SearchBar(search) {
     const [countChar, setCountChar] = useState(0);
     const [list, setList] = useState([]);
 
@@ -22,10 +22,13 @@ export function searchBar(search) {
 
     return (
         <Container>
-            <SearchBar type='search' placeholder='Search by user' autocomplete='on' onChange={() => setCountChar(countChar + 1)} />
+            <SearchBarr type='search' placeholder='Search by user' autocomplete='on' onChange={() => setCountChar(countChar + 1)} />
             {/* Search Icon */}
             <ListBox>{list.map(user => {
-                <UserList key={user.id} user={user} />
+                return(
+
+                    <UserList key={user.id} user={user} />
+                )
             })}</ListBox>
         </Container>
     )
@@ -38,7 +41,7 @@ const Container = styled.div`
     position: relative;
 `;
 
-const SearchBar = styled.input`
+const SearchBarr = styled.input`
     width: 100%;
     height: 100%;
     padding: 0 12px;
