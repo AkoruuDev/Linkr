@@ -69,6 +69,16 @@ export default function Feed(){
                         </form>
                     </CreatePostInfo>
                 </CreatePost>
+                <Post>
+                    <UserImage>
+                        <img src="https://conteudo.imguol.com.br/c/noticias/ef/2019/11/08/andras-arato-ficou-conhecido-como-hide-pain-harold-por-causa-de-seu-sorriso-nervoso-1573231062755_v2_3x4.jpg" alt="velhinho rindo"/>
+                    </UserImage>
+                    <PostInner>
+                       <h1>Juvenal Juvêncio </h1>
+                       <h2>Muito maneiro esse tutorial de Material UI com React, deem uma olhada!</h2> 
+                    </PostInner>
+
+                </Post>
             </Main>
 
         </Container>
@@ -110,7 +120,7 @@ border-radius: 16px;
 background-color: #FFFFFF;
 display:flex;
 padding: 16px 22px 16px 18px;
-
+margin-bottom:29px;
 `
 
 const UserImage = styled.div`
@@ -219,5 +229,40 @@ text-align: left;
 color:#ffffff;
 }
 
+}
+`
+const Post = styled.div`
+height: auto;
+width: 611px;
+border-radius: 16px;
+background-color:#171717;
+padding: 16px 22px 16px 18px;
+display:flex;
+margin-bottom:16px;
+`
+
+const PostInner = styled.div`
+width:100%;
+height:100%;
+display:flex;
+flex-direction:column;
+
+h1{
+    font-family: Lato;
+font-size: 19px;
+font-weight: 400;
+line-height: 23px;
+letter-spacing: 0em;
+text-align: left;
+color:#FFFFFF;
+}
+h2{
+    font-family: Lato;
+font-size: 17px;
+font-weight: 400;
+line-height: 20px;
+letter-spacing: 0em;
+text-align: left;
+color:#B7B7B7;
 }
 `
