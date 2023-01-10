@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {searchProfileList } from "../database/database.js";
 import { UserList } from "./UserList.js";
 
-export function SearchBar(search) {
+export function searchBar(search) {
     const [countChar, setCountChar] = useState(0);
     const [list, setList] = useState([]);
 
@@ -22,7 +22,7 @@ export function SearchBar(search) {
 
     return (
         <Container>
-            <SearchBarr type='search' placeholder='Search by user' autocomplete='on' onChange={() => setCountChar(countChar + 1)} />
+            <SearchBar type='search' placeholder='Search by user' autocomplete='on' onChange={() => setCountChar(countChar + 1)} />
             {/* Search Icon */}
             <ListBox>{list.map(user => {
                 return(
