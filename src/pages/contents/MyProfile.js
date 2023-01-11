@@ -2,8 +2,10 @@ import { useState } from "react";
 import styled from "styled-components"
 import profile from "../../assets/profile.jpg";
 
+
 export default function MyProfile () {
     return (
+        
         <Container>
             <Main>
                 <Info>
@@ -17,12 +19,13 @@ export default function MyProfile () {
                     <div>{'0'} Followers</div>
                 </Follow>
                 <Posts>
-                    <div><span>✨</span> {'0'} Posts</div>
+                signup       <div><span>✨</span> {'0'} Posts</div>
                     <div><span>✨</span> {'0'} Likes</div>
                 </Posts>
                 <Edit>Edit Acount</Edit>
             </Main>
         </Container>
+       
     )
 }
 
