@@ -1,25 +1,36 @@
+import { useState } from "react";
 import styled from "styled-components"
 import profile from "../../assets/profile.jpg";
 
 export default function Profile () {
+    const [follow, setFollow] = useState('Follow');
+
+    function renderFollow() {
+        if (follow === 'Follow') {
+            setFollow('Unfollow')
+        } else {
+            setFollow('Follow')
+        }
+    }
+
     return (
         <Container>
             <Main>
                 <Info>
                     <Image src={profile} alt='profile' />
                     <InfoBox>
-                        <Name>{'its beauty name'}</Name>
+                        <Name>{'Guilherme Kauane Rodrigues de Souza Lima'}</Name>
                         <Member>Member since {'DD/MM/YYYY'}</Member>
                     </InfoBox>
                 </Info>
+                <Follow>
+                    <div>{'0'} Follows</div>
+                    <div onClick={() => renderFollow()}>{follow}</div>
+                </Follow>
                 <Posts>
                     <div><span>✨</span> {'0'} Posts</div>
                     <div><span>✨</span> {'0'} Likes</div>
                 </Posts>
-                <Support>
-                    <div>{'0'} Supports</div>
-                    <div>Support</div>
-                </Support>
             </Main>
         </Container>
     )
@@ -50,7 +61,7 @@ const Info = styled.div`
     margin-bottom: 14px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
 `
 
@@ -62,7 +73,7 @@ const Image = styled.img`
 `
 
 const InfoBox = styled.div`
-    width: calc(75vw - 100px);
+    width: 500px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -82,16 +93,20 @@ const Member = styled.h2`
 
 const Posts = styled.h3`
     width: 80%;
-    margin-bottom: 65px;
     display: flex;
     justify-content: space-between;
     color: #FFFFFF;
 `
 
-const Support = styled.div`
+const Follow = styled.div`
     width: 100%;
+    margin: 35px 0;
+
+    display: flex;
+    justify-content: space-between;
+
     & div{
-        width: 100%;
+        width: 47%;
         height: 65px;
         margin: 15px 0;
         border-radius: 5px;
